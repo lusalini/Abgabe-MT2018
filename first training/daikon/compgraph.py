@@ -56,7 +56,7 @@ def define_computation_graph(source_vocab_size: int, target_vocab_size: int, bat
 
     with tf.variable_scope("Logits"):
         dropout_decoder_outputs = tf.layers.dropout(
-            inputs=decoder_outputs, rate=0.5)
+            inputs=decoder_outputs, rate=0.3)
         decoder_logits = tf.contrib.layers.linear(dropout_decoder_outputs, target_vocab_size)
 
     with tf.variable_scope("Loss"):
